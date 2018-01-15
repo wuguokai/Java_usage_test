@@ -1,6 +1,9 @@
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.pojo.TestPojo;
+import com.pojo.update.AppUpdatePojo;
+import com.pojo.user.UserPojo;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -79,20 +82,56 @@ public class test {
             e.printStackTrace();
         }*/
 
+//        try {
+//            File file = new File("D://test.json");
+//            File fileNew = new File("D://test_new.json");
+//            FileInputStream fileInputStream = new FileInputStream(file);
+//            FileOutputStream fileOutputStream = new FileOutputStream(fileNew);
+//            int tempByte ;
+//            while((tempByte = fileInputStream.read()) != -1){
+//                fileOutputStream.write(tempByte);
+//            }
+//            fileInputStream.close();
+//            fileOutputStream.close();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
+//        Map<String,String> map = new HashMap<>();
+//        map.put("a", "a");
+//        map.put("b","b");
+//        map.put("a","c");
+//        System.out.println(map.get("a"));
+//        System.out.println(map.get("b"));
+
+        Gson gson = new Gson();
+        File file = new File("./test.json");
+        AppUpdatePojo appUpdatePojo = null;
+//        System.out.println(file.length());
+//        UserPojo userPojo = null;
         try {
-            File file = new File("D://test.json");
-            File fileNew = new File("D://test_new.json");
-            FileInputStream fileInputStream = new FileInputStream(file);
-            FileOutputStream fileOutputStream = new FileOutputStream(fileNew);
-            int tempByte ;
-            while((tempByte = fileInputStream.read()) != -1){
-                fileOutputStream.write(tempByte);
-            }
-            fileInputStream.close();
-            fileOutputStream.close();
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+//            userPojo = gson.fromJson(bufferedReader, UserPojo.class);
+            appUpdatePojo = gson.fromJson(bufferedReader, AppUpdatePojo.class);
+            System.out.println(appUpdatePojo);
+//            for (Map.Entry s : testPojo.getTest().entrySet()){
+//                if ("a".equals(s.getValue())){
+//
+//                }
+//            }
         }catch (Exception e){
             e.printStackTrace();
         }
+//        String jsonStr = gson.toJson(userPojo);
+//        System.out.println(jsonStr);
+//        Map map = gson.fromJson(jsonStr, Map.class);
+//        System.out.println(map);
+//        String str = gson.toJson(map);
+//        System.out.println(str);
+//        UserPojo userPojo1 = gson.fromJson(str, UserPojo.class);
+//        System.out.println(userPojo1);
+
 
     }
 }

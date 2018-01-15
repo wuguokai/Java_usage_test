@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.google.code.gson:gson:2.8.0" level="project" />
     <orderEntry type="library" name="com.google.zxing:core:3.0.0" level="project" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.8.01" level="project" />
   </component>
 </module>
